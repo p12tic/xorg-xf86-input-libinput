@@ -1053,13 +1053,11 @@ xf86libinput_init_touch(InputInfoPtr pInfo)
 	struct xf86libinput *driver_data = pInfo->private;
 	struct libinput_device *device = driver_data->shared_device->device;
 	int min, max, res;
-	unsigned char btnmap[MAX_BUTTONS + 1];
 	Atom btnlabels[MAX_BUTTONS];
 	Atom axislabels[TOUCHPAD_NUM_AXES];
 	int nbuttons = 7;
 	int ntouches = TOUCH_MAX_SLOTS;
 
-	init_button_map(btnmap, ARRAY_SIZE(btnmap));
 	init_button_labels(btnlabels, ARRAY_SIZE(btnlabels));
 	init_axis_labels(axislabels, ARRAY_SIZE(axislabels));
 
